@@ -4,17 +4,24 @@ class Cell
 {
 	//	Alive = TRUE
 	//	Dead = FALSE
-	public $attribute = FALSE;
+	private $attribute = FALSE;
 	
 	public function __construct()
 	{
 		//	Generate random attribute
 		$this -> setAttribute($this -> random());
+		
+		return $this -> attribute;
 	}
 	
 	public function setAttribute($attribute)
 	{
 		$this -> attribute = $attribute;
+	}
+	
+	public function getAttribute()
+	{
+		return $this -> attribute;
 	}
 	
 	private function random()

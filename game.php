@@ -2,18 +2,22 @@
 
 require 'world.php';
 
+$rows = 20;
+$columns = 20;
+
 class Game
 {
-	//	add game constants
 	private $game;
 	
-	public function begin()
+	public function __construct($rows, $columns)
 	{
-		$this -> game = new World;
-		$this -> game -> generate(20, 20);
+		$this -> game = new World($rows, $columns);
+	}
+	
+	public function tick($generation)
+	{
+		 
 	}
 }
 
-$test = new Game;
-$test -> begin();
 ?>

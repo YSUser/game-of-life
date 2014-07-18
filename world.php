@@ -4,9 +4,9 @@ require 'cell.php';
 
 class World
 {
-	private $world = array();
+	public $world = array();
 	
-	public function generate($rows, $columns)
+	public function __construct($rows, $columns)
 	{
 		for ($r = 0; $r < $rows; $r++)
 		{
@@ -14,7 +14,7 @@ class World
 			{
 				$this -> world[$r][$c] = new Cell;
 			}
-		}
+		}		
 	}	
 }
 
