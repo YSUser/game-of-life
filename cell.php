@@ -2,15 +2,17 @@
 
 class Cell
 {
-	//	Alive = TRUE
-	//	Dead = FALSE
-	private $attribute = FALSE;
+	//	Alive = 1
+	//	Dead = 0
+	private $attribute = 0;
 	
-	public function __construct()
+	public function __construct($state)
 	{
-		//	Generate random attribute
-		$this -> setAttribute($this -> random());
-		
+		$this -> attribute = $state;
+	}
+	
+	public function __invoke()
+	{
 		return $this -> attribute;
 	}
 	
@@ -18,16 +20,10 @@ class Cell
 	{
 		$this -> attribute = $attribute;
 	}
-	
+
 	public function getAttribute()
 	{
 		return $this -> attribute;
-	}
-	
-	private function random()
-	{
-		//	check other random functions for benchmarking
-		return (bool)rand(0,1);
 	}
 }
 
